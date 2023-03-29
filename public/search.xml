@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/04/02/hello-world/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span> 
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>Hexo Guidance</category>
+      </categories>
+      <tags>
+        <tag>Hello World</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图卷积</title>
+    <url>/2023/03/22/23-03-22/</url>
+    <content><![CDATA[<head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+
+<p>图卷积（Graph Convolution）是一种基于图结构数据的卷积操作。图（Graph）是一种数据结构，用于表示对象（节点）及其关系（边）。图卷积神经网络（GCN，Graph Convolutional Networks）是一类处理图结构数据的神经网络，通过图卷积操作来学习节点特征表示和关系信息。</p>
+<span id="more"></span> 
+<h2 id="图卷积的特点"><a href="#图卷积的特点" class="headerlink" title="图卷积的特点"></a>图卷积的特点</h2><p>我们需要图卷积的原因有以下几点：</p>
+<ol>
+<li>处理非结构化和复杂关系数据：许多现实世界的数据和问题存在复杂的关系，如社交网络、生物信息学、推荐系统等。这些问题不容易用传统的卷积神经网络（CNN）或循环神经网络（RNN）来处理。</li>
+<li>保持局部连接性：图卷积可以捕捉节点之间的局部连接性，从而提取图中的空间特征。</li>
+<li>参数共享：与传统的卷积操作类似，图卷积中的参数在图中的所有位置共享，从而减少了模型的参数数量，降低了过拟合的风险。</li>
+<li>可扩展性：图卷积操作具有很好的可扩展性，能够处理大规模的图结构数据。</li>
+</ol>
+<hr>
+<h2 id="图卷积能解决什么问题"><a href="#图卷积能解决什么问题" class="headerlink" title="图卷积能解决什么问题"></a>图卷积能解决什么问题</h2><p>图卷积可以解决许多问题，包括但不限于以下几类：</p>
+<ol>
+<li><p>节点分类：根据节点的特征和邻居信息，对节点进行分类。例如，在社交网络中，根据用户的特征和朋友关系，预测用户的兴趣标签。</p>
+</li>
+<li><p>边预测&#x2F;链接预测：根据节点的特征和连接信息，预测两个节点之间是否存在链接。例如，在推荐系统中，预测用户和商品之间的潜在联系。</p>
+</li>
+<li><p>图分类：对整个图进行分类。例如，在化学领域，根据分子结构（图）预测化合物的性质。</p>
+</li>
+<li><p>图生成：生成新的图结构。例如，在药物设计领域，生成具有特定特性的新化合物。</p>
+</li>
+<li><p><strong>图嵌入：将图结构数据表示为低维向量，以便于机器学习算法的应用。例如，在图数据库检索中，将图数据表示为向量，以便进行相似度计算。</strong></p>
+</li>
+</ol>
+<hr>
+<h2 id="图卷积的原理和操作"><a href="#图卷积的原理和操作" class="headerlink" title="图卷积的原理和操作"></a>图卷积的原理和操作</h2><p>图卷积的原理基于将图结构数据（节点和边）通过卷积操作进行特征提取。在图卷积神经网络（GCN）中，每个节点都有一个初始特征向量。图卷积操作的目标是将每个节点的信息聚合到其相邻节点，以便学习节点及其邻居的高级特征表示。</p>
+<p>以下是图卷积操作的基本步骤：</p>
+<ol>
+<li><p>邻域信息聚合：对于图中的每个节点，我们会收集其邻居节点的特征信息。通常，我们会使用邻接矩阵表示图的连接关系。</p>
+</li>
+<li><p>聚合函数：定义一个聚合函数，用于将邻居节点的特征信息进行整合。这个函数可以是简单的平均、最大值或加权和等。例如，对于节点v的所有邻居节点u，我们可以计算特征矩阵X的加权和：$sum({A}_{uv} * X_u)$，其中A_uv是邻接矩阵的元素。</p>
+</li>
+<li><p>线性变换：将聚合后的邻域信息进行线性变换。这一步通常涉及到权重矩阵W，用于学习节点特征表示。对于节点v，我们可以计算$X_v’ &#x3D; sum({A}_{uv} * X_u) * W$。</p>
+</li>
+<li><p>非线性激活：将线性变换后的结果通过一个非线性激活函数，如ReLU、tanh或sigmoid等。例如，对于节点v，我们可以计算$H_v &#x3D; activation(X_v’)$。</p>
+</li>
+<li><p>多层图卷积：上述过程是单层图卷积操作。为了捕捉更高层次的特征，我们可以堆叠多个图卷积层。在每个图卷积层中，特征矩阵会更新为下一层的输入。</p>
+</li>
+<li><p>损失函数与优化：根据任务类型（例如节点分类、图分类等），我们可以定义一个损失函数，用于衡量模型的预测与实际结果之间的差异。通过优化算法（例如随机梯度下降）来最小化损失函数，从而学习模型参数（权重矩阵W等）。</p>
+</li>
+</ol>
+<p>图卷积操作的核心思想是将节点及其邻居的特征信息进行聚合和整合，以学习图结构数据的高级表示。这种方法允许模型捕捉到节点之间的局部连接性和空间特征，从而在各种图结构数据问题中取得优异的性能。</p>
+]]></content>
+      <categories>
+        <category>Diary</category>
+      </categories>
+      <tags>
+        <tag>Deep Learning</tag>
+      </tags>
+  </entry>
+</search>

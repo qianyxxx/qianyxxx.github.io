@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"qianyxxx.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="MathJax.Hub.Config({             tex2jax: {             skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],             inlineMath: [[&#39;$&#39;,&#39;$&#39;]]             }         });">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图卷积">
+<meta property="og:url" content="https://qianyxxx.github.io/2023/03/22/23-03-22/index.html">
+<meta property="og:site_name" content="YAN QIAN">
+<meta property="og:description" content="MathJax.Hub.Config({             tex2jax: {             skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],             inlineMath: [[&#39;$&#39;,&#39;$&#39;]]             }         });">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-03-22T15:13:53.484Z">
+<meta property="article:modified_time" content="2023-03-22T16:06:19.001Z">
+<meta property="article:author" content="Yan Qian">
+<meta property="article:tag" content="Deep Learning">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://qianyxxx.github.io/2023/03/22/23-03-22/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://qianyxxx.github.io/2023/03/22/23-03-22/","path":"2023/03/22/23-03-22/","title":"图卷积"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>图卷积 | YAN QIAN</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">YAN QIAN</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Yan Qian"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Yan Qian</p>
+  <div class="site-description" itemprop="description">Ph.D. Student in the Department of Computer Science, University of Warwick (UoW)</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/qianyxxx" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;qianyxxx" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:Yan.Qian.1@warwick.ac.uk" title="E-Mail → mailto:Yan.Qian.1@warwick.ac.uk" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/5596148856" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;5596148856" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/YanQian1201" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;YanQian1201" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/yan-qian-0683371a8/" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;yan-qian-0683371a8&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/qianyan_1201" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;qianyan_1201" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+
+    
+
+
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://qianyxxx.github.io/2023/03/22/23-03-22/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Yan Qian">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YAN QIAN">
+      <meta itemprop="description" content="Ph.D. Student in the Department of Computer Science, University of Warwick (UoW)">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="图卷积 | YAN QIAN">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          图卷积
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-03-22 15:13:53 / Modified: 16:06:19" itemprop="dateCreated datePublished" datetime="2023-03-22T15:13:53+00:00">2023-03-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Diary/" itemprop="url" rel="index"><span itemprop="name">Diary</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>1.5k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
+
+<p>图卷积（Graph Convolution）是一种基于图结构数据的卷积操作。图（Graph）是一种数据结构，用于表示对象（节点）及其关系（边）。图卷积神经网络（GCN，Graph Convolutional Networks）是一类处理图结构数据的神经网络，通过图卷积操作来学习节点特征表示和关系信息。</p>
+<span id="more"></span> 
+<h2 id="图卷积的特点"><a href="#图卷积的特点" class="headerlink" title="图卷积的特点"></a>图卷积的特点</h2><p>我们需要图卷积的原因有以下几点：</p>
+<ol>
+<li>处理非结构化和复杂关系数据：许多现实世界的数据和问题存在复杂的关系，如社交网络、生物信息学、推荐系统等。这些问题不容易用传统的卷积神经网络（CNN）或循环神经网络（RNN）来处理。</li>
+<li>保持局部连接性：图卷积可以捕捉节点之间的局部连接性，从而提取图中的空间特征。</li>
+<li>参数共享：与传统的卷积操作类似，图卷积中的参数在图中的所有位置共享，从而减少了模型的参数数量，降低了过拟合的风险。</li>
+<li>可扩展性：图卷积操作具有很好的可扩展性，能够处理大规模的图结构数据。</li>
+</ol>
+<hr>
+<h2 id="图卷积能解决什么问题"><a href="#图卷积能解决什么问题" class="headerlink" title="图卷积能解决什么问题"></a>图卷积能解决什么问题</h2><p>图卷积可以解决许多问题，包括但不限于以下几类：</p>
+<ol>
+<li><p>节点分类：根据节点的特征和邻居信息，对节点进行分类。例如，在社交网络中，根据用户的特征和朋友关系，预测用户的兴趣标签。</p>
+</li>
+<li><p>边预测&#x2F;链接预测：根据节点的特征和连接信息，预测两个节点之间是否存在链接。例如，在推荐系统中，预测用户和商品之间的潜在联系。</p>
+</li>
+<li><p>图分类：对整个图进行分类。例如，在化学领域，根据分子结构（图）预测化合物的性质。</p>
+</li>
+<li><p>图生成：生成新的图结构。例如，在药物设计领域，生成具有特定特性的新化合物。</p>
+</li>
+<li><p><strong>图嵌入：将图结构数据表示为低维向量，以便于机器学习算法的应用。例如，在图数据库检索中，将图数据表示为向量，以便进行相似度计算。</strong></p>
+</li>
+</ol>
+<hr>
+<h2 id="图卷积的原理和操作"><a href="#图卷积的原理和操作" class="headerlink" title="图卷积的原理和操作"></a>图卷积的原理和操作</h2><p>图卷积的原理基于将图结构数据（节点和边）通过卷积操作进行特征提取。在图卷积神经网络（GCN）中，每个节点都有一个初始特征向量。图卷积操作的目标是将每个节点的信息聚合到其相邻节点，以便学习节点及其邻居的高级特征表示。</p>
+<p>以下是图卷积操作的基本步骤：</p>
+<ol>
+<li><p>邻域信息聚合：对于图中的每个节点，我们会收集其邻居节点的特征信息。通常，我们会使用邻接矩阵表示图的连接关系。</p>
+</li>
+<li><p>聚合函数：定义一个聚合函数，用于将邻居节点的特征信息进行整合。这个函数可以是简单的平均、最大值或加权和等。例如，对于节点v的所有邻居节点u，我们可以计算特征矩阵X的加权和：$sum({A}_{uv} * X_u)$，其中A_uv是邻接矩阵的元素。</p>
+</li>
+<li><p>线性变换：将聚合后的邻域信息进行线性变换。这一步通常涉及到权重矩阵W，用于学习节点特征表示。对于节点v，我们可以计算$X_v’ &#x3D; sum({A}_{uv} * X_u) * W$。</p>
+</li>
+<li><p>非线性激活：将线性变换后的结果通过一个非线性激活函数，如ReLU、tanh或sigmoid等。例如，对于节点v，我们可以计算$H_v &#x3D; activation(X_v’)$。</p>
+</li>
+<li><p>多层图卷积：上述过程是单层图卷积操作。为了捕捉更高层次的特征，我们可以堆叠多个图卷积层。在每个图卷积层中，特征矩阵会更新为下一层的输入。</p>
+</li>
+<li><p>损失函数与优化：根据任务类型（例如节点分类、图分类等），我们可以定义一个损失函数，用于衡量模型的预测与实际结果之间的差异。通过优化算法（例如随机梯度下降）来最小化损失函数，从而学习模型参数（权重矩阵W等）。</p>
+</li>
+</ol>
+<p>图卷积操作的核心思想是将节点及其邻居的特征信息进行聚合和整合，以学习图结构数据的高级表示。这种方法允许模型捕捉到节点之间的局部连接性和空间特征，从而在各种图结构数据问题中取得优异的性能。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Deep-Learning/" rel="tag"># Deep Learning</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/04/02/hello-world/" rel="prev" title="Hello World">
+                  <i class="fa fa-chevron-left"></i> Hello World
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yan Qian</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Symbols count total">2k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">2 mins.</span>
+  </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
