@@ -20,12 +20,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"qianyxxx.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Ph.D. Student in the Department of Computer Science, University of Warwick (UoW)">
+    <meta name="description" content="Ph.D. Student in Computer Science, University of Warwick">
 <meta property="og:type" content="website">
 <meta property="og:title" content="YAN QIAN">
 <meta property="og:url" content="https://qianyxxx.github.io/index.html">
 <meta property="og:site_name" content="YAN QIAN">
-<meta property="og:description" content="Ph.D. Student in the Department of Computer Science, University of Warwick (UoW)">
+<meta property="og:description" content="Ph.D. Student in Computer Science, University of Warwick">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="Yan Qian">
 <meta name="twitter:card" content="summary">
@@ -121,13 +121,13 @@
     <img class="site-author-image" itemprop="image" alt="Yan Qian"
       src="/images/avatar.png">
   <p class="site-author-name" itemprop="name">Yan Qian</p>
-  <div class="site-description" itemprop="description">Ph.D. Student in the Department of Computer Science, University of Warwick (UoW)</div>
+  <div class="site-description" itemprop="description">Ph.D. Student in Computer Science, University of Warwick</div>
 </div>
 <div class="site-state-wrap site-overview-item animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -200,7 +200,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://qianyxxx.github.io/2023/03/22/23-03-22/">
+    <link itemprop="mainEntityOfPage" href="https://qianyxxx.github.io/2023/03/29/Teacher-student-Classifier/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -209,7 +209,7 @@
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="YAN QIAN">
-      <meta itemprop="description" content="Ph.D. Student in the Department of Computer Science, University of Warwick (UoW)">
+      <meta itemprop="description" content="Ph.D. Student in Computer Science, University of Warwick">
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
@@ -218,7 +218,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/03/22/23-03-22/" class="post-title-link" itemprop="url">图卷积</a>
+          <a href="/2023/03/29/Teacher-student-Classifier/" class="post-title-link" itemprop="url">Teacher-student Classifier</a>
         </h2>
 
         <div class="post-meta-container">
@@ -230,7 +230,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2023-03-22 15:13:53 / Modified: 16:06:19" itemprop="dateCreated datePublished" datetime="2023-03-22T15:13:53+00:00">2023-03-22</time>
+      <time title="Created: 2023-03-29 14:57:20 / Modified: 15:01:30" itemprop="dateCreated datePublished" datetime="2023-03-29T14:57:20+01:00">2023-03-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -238,7 +238,108 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Diary/" itemprop="url" rel="index"><span itemprop="name">Diary</span></a>
+          <a href="/categories/%E9%9A%8F%E7%AD%86/" itemprop="url" rel="index"><span itemprop="name">随筆</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>3.4k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="如何用teacher-student-分类器无监督学习-cluster"><a href="#如何用teacher-student-分类器无监督学习-cluster" class="headerlink" title="如何用teacher-student 分类器无监督学习 cluster"></a>如何用teacher-student 分类器无监督学习 cluster</h1>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/03/29/Teacher-student-Classifier/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://qianyxxx.github.io/2023/03/29/23-03-22/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Yan Qian">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YAN QIAN">
+      <meta itemprop="description" content="Ph.D. Student in Computer Science, University of Warwick">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | YAN QIAN">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/03/29/23-03-22/" class="post-title-link" itemprop="url">图卷积</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-03-29 12:37:58 / Modified: 15:00:00" itemprop="dateCreated datePublished" datetime="2023-03-29T12:37:58+01:00">2023-03-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%9A%8F%E7%AD%86/" itemprop="url" rel="index"><span itemprop="name">随筆</span></a>
         </span>
     </span>
 
@@ -282,7 +383,7 @@
 <p>图卷积（Graph Convolution）是一种基于图结构数据的卷积操作。图（Graph）是一种数据结构，用于表示对象（节点）及其关系（边）。图卷积神经网络（GCN，Graph Convolutional Networks）是一类处理图结构数据的神经网络，通过图卷积操作来学习节点特征表示和关系信息。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2023/03/22/23-03-22/#more" rel="contents">
+              <a class="btn" href="/2023/03/29/23-03-22/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -322,7 +423,7 @@
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="YAN QIAN">
-      <meta itemprop="description" content="Ph.D. Student in the Department of Computer Science, University of Warwick (UoW)">
+      <meta itemprop="description" content="Ph.D. Student in Computer Science, University of Warwick">
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
@@ -427,13 +528,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">2k</span>
+    <span title="Symbols count total">5k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2 mins.</span>
+    <span title="Reading time total">5 mins.</span>
   </span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
