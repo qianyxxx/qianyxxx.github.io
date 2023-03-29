@@ -6,9 +6,10 @@ categories:
 tags:
   - Deep Learning
 ---
-# 如何用teacher-student 分类器无监督学习 cluster
+
+# 如何用teacher-student分类器进行无监督学习
 <!-- more --> 
-## 什么是teacher-student classifier
+## 什么是teacher-student分类器
 
 Teacher-student分类器是一种机器学习方法，在无监督学习任务中，它通常用于聚类。聚类是一种分析数据的技术，旨在将数据点分为相似的组（称为簇）。
 

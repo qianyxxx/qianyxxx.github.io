@@ -20,15 +20,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"qianyxxx.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="如何用teacher-student 分类器无监督学习 cluster">
+    <meta name="description" content="如何用teacher-student分类器进行无监督学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Teacher-student Classifier">
 <meta property="og:url" content="https://qianyxxx.github.io/2023/03/29/Teacher-student-Classifier/index.html">
 <meta property="og:site_name" content="YAN QIAN">
-<meta property="og:description" content="如何用teacher-student 分类器无监督学习 cluster">
+<meta property="og:description" content="如何用teacher-student分类器进行无监督学习">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-03-29T13:57:20.000Z">
-<meta property="article:modified_time" content="2023-03-29T14:01:30.530Z">
+<meta property="article:modified_time" content="2023-03-29T15:20:48.420Z">
 <meta property="article:author" content="Yan Qian">
 <meta property="article:tag" content="Deep Learning">
 <meta name="twitter:card" content="summary">
@@ -234,7 +234,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2023-03-29 14:57:20 / Modified: 15:01:30" itemprop="dateCreated datePublished" datetime="2023-03-29T14:57:20+01:00">2023-03-29</time>
+      <time title="Created: 2023-03-29 14:57:20 / Modified: 16:20:48" itemprop="dateCreated datePublished" datetime="2023-03-29T14:57:20+01:00">2023-03-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -271,8 +271,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="如何用teacher-student-分类器无监督学习-cluster"><a href="#如何用teacher-student-分类器无监督学习-cluster" class="headerlink" title="如何用teacher-student 分类器无监督学习 cluster"></a>如何用teacher-student 分类器无监督学习 cluster</h1><span id="more"></span> 
-<h2 id="什么是teacher-student-classifier"><a href="#什么是teacher-student-classifier" class="headerlink" title="什么是teacher-student classifier"></a>什么是teacher-student classifier</h2><p>Teacher-student分类器是一种机器学习方法，在无监督学习任务中，它通常用于聚类。聚类是一种分析数据的技术，旨在将数据点分为相似的组（称为簇）。</p>
+        <h1 id="如何用teacher-student分类器进行无监督学习"><a href="#如何用teacher-student分类器进行无监督学习" class="headerlink" title="如何用teacher-student分类器进行无监督学习"></a>如何用teacher-student分类器进行无监督学习</h1><span id="more"></span> 
+<h2 id="什么是teacher-student分类器"><a href="#什么是teacher-student分类器" class="headerlink" title="什么是teacher-student分类器"></a>什么是teacher-student分类器</h2><p>Teacher-student分类器是一种机器学习方法，在无监督学习任务中，它通常用于聚类。聚类是一种分析数据的技术，旨在将数据点分为相似的组（称为簇）。</p>
 <p>在使用Teacher-student分类器进行聚类时，首先需要定义一个“Teacher”网络，该网络是一个预先训练的模型，具有高精度的分类能力。然后，需要定义一个“Student”网络，该网络是一个未训练的模型，用于从Teacher网络学习。</p>
 <p>然后，在无监督学习任务中，数据点被输入到Teacher网络，并通过获得Teacher网络的输出（例如，分类标签）来训练Student网络。由于Teacher网络具有高精度的分类能力，因此Student网络可以从Teacher网络中学到相关的模式，从而在未来的分类任务中进行更好的预测。</p>
 <p>在聚类任务中，数据点通过Student网络获得分类标签，并将相似的数据点分为同一簇。由于Student网络是从Teacher网络学习的，因此它具有相对高精度的聚类能力。</p>
