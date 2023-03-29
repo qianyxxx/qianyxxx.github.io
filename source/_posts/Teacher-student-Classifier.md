@@ -6,13 +6,22 @@ categories:
 tags:
   - Deep Learning
 ---
+<head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
 
-# 如何用teacher-student分类器进行无监督学习
-<!-- more --> 
-## 什么是teacher-student分类器
+### 什么是teacher-student分类器
 
 Teacher-student分类器是一种机器学习方法，在无监督学习任务中，它通常用于聚类。聚类是一种分析数据的技术，旨在将数据点分为相似的组（称为簇）。
-
+<!-- more --> 
 在使用Teacher-student分类器进行聚类时，首先需要定义一个“Teacher”网络，该网络是一个预先训练的模型，具有高精度的分类能力。然后，需要定义一个“Student”网络，该网络是一个未训练的模型，用于从Teacher网络学习。
 
 然后，在无监督学习任务中，数据点被输入到Teacher网络，并通过获得Teacher网络的输出（例如，分类标签）来训练Student网络。由于Teacher网络具有高精度的分类能力，因此Student网络可以从Teacher网络中学到相关的模式，从而在未来的分类任务中进行更好的预测。
@@ -36,7 +45,7 @@ $$J\left(\theta_{\text {student }}\right)=\frac{1}{N} \sum_{i=1}^{N} \mathcal{L}
 
 ---
 
-## 如何构造tearcher-student分类器
+### 如何构造tearcher-student分类器
 
 下面是一个使用Teacher-student分类器进行无监督学习聚类的简单示例：
 1. 数据准备：准备一个包含数据点的数据集，该数据集将用于训练Teacher网络和Student网络。
@@ -51,7 +60,7 @@ $$J\left(\theta_{\text {student }}\right)=\frac{1}{N} \sum_{i=1}^{N} \mathcal{L}
 
 ---
 
-## 代码实现
+### 代码实现
 
 下面是使用Python和TensorFlow实现Teacher-student分类器无监督学习聚类的示例代码：
 
@@ -107,7 +116,7 @@ for i in range(len(x_test)):
 请注意，这只是一个示例代码，具体实现可能因数据集和具体任务而异。为了获得最佳效果，需要根据数据特征和分布进行调整和优化。这里使用的是MNIST数据集，你可以使用其他数据集进行试验。另外，你也可以更改网络结构和超参数以提高分类效果。
 
 ---
-## Challenge & Future Work
+### Challenge & Future Work
 
 Teacher-student分类器的challenges:
 
